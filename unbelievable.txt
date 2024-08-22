@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Base</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: url('https://img.wapka.io/00eil6.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            color: #fff;
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .sweet-message {
+            font-size: 1.2em;
+            color: #fff;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+        .items-section {
+            padding: 20px;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .category-card {
+            cursor: pointer;
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .category-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .category-title {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .model-selector {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            white-space: nowrap;
+        }
+        .model-option {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            background: #fff;
+            color: #333;
+            transition: background 0.3s ease;
+            width: 150px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .model-option:hover {
+            background: #ddd;
+        }
+        .items-container {
+            display: none;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .item-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            text-align: center;
+            padding: 10px;
+        }
+        .item-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .item-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .item-price {
+            font-size: 1.1em;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://img.wapka.io/00eilc.jpg" alt="Logo">
+        <h1>Military Base</h1>
+        <div class="sweet-message">Welcome to the ultimate Military Base experience! Explore and enjoy.</div>
+    </header>
+    <div class="slider">
+        <div class="slides">
+            <img src="https://img.wapka.io/00eil7.jpeg" alt="Image One">
+            <img src="https://img.wapka.io/00eil9.jpeg" alt="Image Two">
+        </div>
+    </div>
+    <div class="items-section">
+        <div class="categories">
+            <div class="category-card" onclick="showCategory('iphones')">
+                <img src="https://img.wapka.io/00eiol.jpeg" alt="iPhones">
+                <div class="category-title">iPhones</div>
+            </div>
+            <!-- Add more categories here if needed -->
+        </div>
+        <div class="model-selector" id="iphones-selector">
+            <div class="model-option" onclick="showItems('iphone-6s')">iPhone 6s</div>
+            <div class="model-option" onclick="showItems('iphone-6-plus')">iPhone 6 plus</div>
+            <div class="model-option" onclick="showItems('iphone-7')">iPhone 7</div>
+            <div class="model-option" onclick="showItems('iphone-7-plus')">iPhone 7 plus</div>
+            <div class="model-option" onclick="showItems('iphone-8')">iPhone 8</div>
+            <div class="model-option" onclick="showItems('iphone-8-plus')">iPhone 8 Plus</div>
+            <div class="model-option" onclick="showItems('iphone-X')">iPhone X</div>
+            <div class="model-option" onclick="showItems('iphone-XR')">iPhone XR</div>
+            <div class="model-option" onclick="showItems('iphone-XS')">iPhone XS</div>
+            <div class="model-option" onclick="showItems('iphone-XS-MAX')">iPhone XS MAX</div>
+            <div class="model-option" onclick="showItems('iphone-11')">iPhone 11 </div>
+            <div class="model-option" onclick="showItems('iphone-11-pro')">iPhone 11 Pro</div>
+            <div class="model-option" onclick="showItems('iphone-11 Pro')">iPhone 11 pro</div>
+            <div class="model-option" onclick="showItems('iphone-11-pro-max')">iPhone 11 pro max</div>
+            <div class="model-option" onclick="showItems('iphone-12')">iPhone 12</div>
+            <div class="model-option" onclick="showItems('iphone-12-pro')">iPhone 12 Pro</div>
+        </div>
+        <!-- Item Containers -->
+        <div class="items-container" id="iphone-6s">
+    <!-- Item cards for iPhone 6s -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eime.png" alt="iPhone 6s Model A">
+        <div class="item-title">iPhone 6s Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimf.png" alt="iPhone 6s Model B">
+        <div class="item-title">iPhone 6s Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div
+        <div class="items-container" id="iphone-6-plus">
+    <!-- Item cards for iPhone 6 plus -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimh.jpg" alt="iPhone 6s Model A">
+        <div class="item-title">iPhone 6s Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimg.png" alt="iPhone 6 plus Model B">
+        <div class="item-title">iPhone 6 plus Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div> 
+<div class="items-container" id="iphone-7">
+    <!-- Item cards for iPhone 7 -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimj.jpeg" alt="iPhone 7 Model A">
+        <div class="item-title">iPhone 7 Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimi.jpeg" alt="iPhone 7 Model B">
+        <div class="item-title">iPhone 7 Model B</div>
+        <div class="item-price">$</div>
+    </div>
+        </div>
+</div> 
+     <div class="items-container" id="iphone-7-plus">
+    <!-- Item cards for iPhone 7 plus -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eiml.jpeg" alt="iPhone 7 plus Model A">
+        <div class="item-title">iPhone 7 plus Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimk.jpeg" alt="iPhone 7 plus Model B">
+        <div class="item-title">iPhone 7 plus Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+  <div class="items-container" id="iphone-8">
+    <!-- Item cards for iPhone 8 -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimn.png" alt="iPhone 8 Model A">
+        <div class="item-title">iPhone 8 Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimm.jpeg" alt="iPhone 8 Model B">
+        <div class="item-title">iPhone 8 Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+<div class="items-container" id="iphone-8-plus">
+    <!-- Item cards for iPhone 8 plus -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimp.jpeg" alt="iPhone 8 plus Model A">
+        <div class="item-title">iPhone 8 plus Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimo.jpeg" alt="iPhone 8 plus Model B">
+        <div class="item-title">iPhone 8 plus Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+<div class="items-container" id="iphone-X">
+    <!-- Item cards for iPhone X -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimr.jpg" alt="iPhone X Model A">
+        <div class="item-title">iPhone X Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimq.jpeg" alt="iPhone X Model B">
+        <div class="item-title">iPhone X Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+<div class="items-container" id="iphone-XR">
+    <!-- Item cards for iPhone XR -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eims.jpg" alt="iPhone XR Model A">
+        <div class="item-title">iPhone XR Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/008er1.png" alt="iPhone XR Model B">
+        <div class="item-title">iPhone XR Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+<div class="items-container" id="iphone-XS">
+    <!-- Item cards for iPhone XS -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimv.jpg" alt="iPhone XS Model A">
+        <div class="item-title">iPhone XS Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimu.jpg" alt="iPhone XS Model B">
+        <div class="item-title">iPhone XS Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+<div class="items-container" id="iphone-XS-MAX">
+    <!-- Item cards for iPhone XS-MAX -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimx.jpg" alt="iPhone XS MAX Model A">
+        <div class="item-title">iPhone XS MAX Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimw.jpeg" alt="iPhone XS MAX Model B">
+        <div class="item-title">iPhone XS MAX Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+<div class="items-container" id="iphone-11">
+    <!-- Item cards for iPhone 11 -->
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eimy.jpeg" alt="iPhone 11 Model A">
+        <div class="item-title">iPhone 11 Model A</div>
+        <div class="item-price">$</div>
+    </div>
+    <div class="item-card">
+        <img src="https://img.wapka.io/00eion.jpg" alt="iPhone 11 Model B">
+        <div class="item-title">iPhone 11 Model B</div>
+        <div class="item-price">$</div>
+    </div>
+</div>
+
+    </div>
+</div>
+    </div>
+    <script>
+        // JavaScript to handle category and model display
+        function showCategory(categoryId) {
+            document.querySelectorAll('.model-selector').forEach(selector => {
+                selector.style.display = 'none';
+            });
+            document.getElementById(categoryId + '-selector').style.display = 'flex';
+        }
+
+        function showItems(modelId) {
+            document.querySelectorAll('.items-container').forEach(container => {
+                container.style.display = 'none';
+            });
+            document.getElementById(modelId).style.display = 'flex';
+        }
+
+        // Example code to initialize the slider
+        const slides = document.querySelector('.slides');
+        let currentIndex = 0;
+        const slideImages = slides.querySelectorAll('img');
+        const totalSlides = slideImages.length;
+
+        function showSlide(index) {
+            const offset = -index * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Automatically change slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initial display setup
+        showCategory('iphones');
+        showItems('iphone-13');
+    </script>
+</body>
+</html>
