@@ -1,41 +1,38 @@
+/* Example CSS for a clean, professional look */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
 }
 
-#login, #register, #homePage {
+.page {
+    width: 300px;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 10px;
-    display: none;
+    text-align: center;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #333;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
+input {
     margin: 10px 0;
-    border: 1px solid #ccc;
+    padding: 10px;
     border-radius: 5px;
-    box-sizing: border-box;
+    border: 1px solid #ccc;
 }
 
 button {
-    width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -48,53 +45,15 @@ button:hover {
     background-color: #0056b3;
 }
 
-p {
-    font-size: 14px;
-    color: #555;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-#navIcons {
+footer {
+    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
+    justify-content: space-around;
 }
 
-.navIcon {
-    font-size: 16px;
-    text-align: center;
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    margin: 0 5px;
-    color: #007bff;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navIcon i {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.navIcon:hover {
-    background-color: #e2e6ea;
+footer button {
+    background: none;
+    border: none;
+    font-size: 18px;
     cursor: pointer;
-}
-
-/* Initially show login form */
-#login {
-    display: block;
 }
