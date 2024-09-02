@@ -20,8 +20,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     localStorage.setItem('phone', phone);
     localStorage.setItem('password', password);
 
-    alert('Registration successful! Please log in.');
-
+    // After registration, show login form
     document.getElementById('register').style.display = 'none';
     document.getElementById('login').style.display = 'block';
 });
@@ -37,11 +36,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const fullName = localStorage.getItem('fullName');
 
     if (loginPhone === storedPhone && loginPassword === storedPassword) {
-        alert('Login successful!');
+        // On successful login, load the home page
         document.getElementById('userFullName').textContent = fullName;
         document.getElementById('login').style.display = 'none';
         document.getElementById('homePage').style.display = 'block';
     } else {
+        // On login failure, show an error message
         alert('Login failed. Please check your phone number and password.');
     }
 });
