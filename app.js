@@ -1,47 +1,21 @@
-// Switch between login and registration forms
 document.getElementById('showRegister').addEventListener('click', function() {
-    document.getElementById('login').style.display = 'none';
-    document.getElementById('register').style.display = 'block';
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('registerPage').style.display = 'block';
+});
+
+document.getElementById('showLogin').addEventListener('click', function() {
+    document.getElementById('registerPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'block';
 });
 
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const fullName = document.getElementById('fullName').value;
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Store user data in localStorage
+    // Save user data in localStorage
     localStorage.setItem('fullName', fullName);
-    localStorage.setItem('username', username);
-    localStorage.setItem('email', email);
-    localStorage.setItem('phone', phone);
-    localStorage.setItem('password', password);
-
-    // After registration, show login form
-    document.getElementById('register').style.display = 'none';
-    document.getElementById('login').style.display = 'block';
-});
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const loginPhone = document.getElementById('loginPhone').value;
-    const loginPassword = document.getElementById('loginPassword').value;
-
-    const storedPhone = localStorage.getItem('phone');
-    const storedPassword = localStorage.getItem('password');
-    const fullName = localStorage.getItem('fullName');
-
-    if (loginPhone === storedPhone && loginPassword === storedPassword) {
-        // On successful login, load the home page
-        document.getElementById('userFullName').textContent = fullName;
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('homePage').style.display = 'block';
-    } else {
-        // On login failure, show an error message
-        alert('Login failed. Please check your phone number and password.');
-    }
-});
+   ⬤
