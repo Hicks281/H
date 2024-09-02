@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Investing Platform</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Login Form -->
-    <div id="login">
+    <!-- Login Page -->
+    <div id="loginPage" class="page">
         <h2>Login</h2>
         <form id="loginForm">
-            <input type="tel" id="loginPhone" placeholder="Phone Number" required>
+            <input type="text" id="loginPhone" placeholder="Phone Number" required>
             <input type="password" id="loginPassword" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
     </div>
 
-    <!-- Registration Form -->
-    <div id="register">
+    <!-- Registration Page -->
+    <div id="registerPage" class="page" style="display:none;">
         <h2>Register</h2>
         <form id="registerForm">
             <input type="text" id="fullName" placeholder="Full Name" required>
-            <input type="text" id="username" placeholder="Username" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
             <input type="email" id="email" placeholder="Email" required>
-            <input type="tel" id="phone" placeholder="Phone Number" required>
             <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Register</button>
         </form>
+        <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
     </div>
 
     <!-- Home Page -->
-    <div id="homePage">
-        <h2>Welcome, <span id="userFullName"></span>!</h2>
-        <p>This is your home page.</p>
-        <!-- Add more content or features to your home page -->
-        <div id="navIcons">
-            <a href="#" class="navIcon"><i class="fas fa-home"></i> Home</a>
-            <a href="#" class="navIcon"><i class="fas fa-chart-line"></i> Invest</a>
-            <a href="#" class="navIcon"><i class="fas fa-user"></i> Profile</a>
-        </div>
+    <div id="homePage" class="page" style="display:none;">
+        <h2>Welcome, <span id="userFullName"></span></h2>
+        <p>Your Investments Dashboard</p>
+        <!-- Navigation Icons -->
+        <footer>
+            <button id="homeIcon">🏠 Home</button>
+            <button id="investIcon">💼 Invest</button>
+            <button id="profileIcon">👤 Profile</button>
+        </footer>
     </div>
 
-    <script src="app.js"></script> <!-- Link to your JS file -->
+    <script src="app.js"></script>
 </body>
-</html>
+                </html>
